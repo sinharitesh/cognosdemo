@@ -1,0 +1,12 @@
+applications:
+- path: MyData/war/erssample.war
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: hclcognosreports
+  host: hclcognosreports
+  disk_quota: 1024M
+  services:
+  - Embeddable Reporting-Simulator
+  - hclsimulatornoderedapp-cloudantNoSQLDB
+  - dashDB-0f-simulator
