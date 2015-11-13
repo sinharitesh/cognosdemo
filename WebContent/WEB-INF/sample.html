@@ -10,7 +10,7 @@ US Government Users Restricted Rights - Use, duplication or disclosure restricte
 -->
 <html lang="en-US">
 	<head>
-		<title>IBM Embeddable Reporting Demo</title>
+		<title>IBM Bluemix Reporting Demo</title>
 		<!-- Include the report style sheet directly since we're using htmlFragment as the output format -->
 		<!-- link rel="stylesheet" type="text/css" href="/ba/cre/~/schemas/GlobalReportStyles_10.css" -->
 		<script type="text/javascript">
@@ -66,7 +66,7 @@ US Government Users Restricted Rights - Use, duplication or disclosure restricte
 						    txt += ">" + appObject["name"] + "</option>";
 						}
 						txt += "</select>";
-						document.getElementById('apps').innerHTML = txt;
+						document.getElementById('apps').innerHTML = txt; 
 					}
 				}
 				app.send();
@@ -149,7 +149,7 @@ US Government Users Restricted Rights - Use, duplication or disclosure restricte
 	<body style="background-color: #3B4B54;color: white;font-family: HelveticaNeue,Helvetica Neue,HelveticaNeueRoman,HelveticaNeue-Roman,Helvetica Neue Roman,TeXGyreHerosRegular,Helvetica,Tahoma,Geneva,Arial,sans-serif;" onload="init()">
 		<table style="width:100%">
 			<tr>
-				<td><div id="apps" style="text-align:left;font-size:small"></div></td>
+				<td><div id="apps" style="text-align:left;font-size:small;display:none;">></div></td>
 				<td><div style="text-align:right;font-size:small"><!-- <a target="_blank" href="/ba/rest-docs/">Rest API Documentation</a> --></div></td>
 			</tr>
 		</table>

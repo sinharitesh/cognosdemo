@@ -2,8 +2,8 @@
 <project basedir="." default="build" name="erssample">
     
   <property name="debuglevel" value="source,lines,vars" />
-  <property name="target" value="1.5" />
-  <property name="source" value="1.5" />
+  <property name="target" value="1.7" />
+  <property name="source" value="1.7" />
   <property name="warname" value="${ant.project.name}.war" />
   <property environment="env"/>
   <condition property="artifact_dir" value="${env.ARCHIVE_DIR}" else=".">
@@ -55,7 +55,7 @@
   </target>
   
   <target name="build-war" depends="build-project">
-    <war destfile="${artifact_dir}/${warname}" basedir="bin" />
+   <war destfile="MyData/${warname}" basedir="bin"/>
   </target>
 
   

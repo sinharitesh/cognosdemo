@@ -1,6 +1,6 @@
 applications:
-- path: MyData/war/erssample.war
-  memory: 512M
+- path: MyData/erssample.war
+  memory: 1024M
   instances: 1
   domain: mybluemix.net
   name: hclcognosreports

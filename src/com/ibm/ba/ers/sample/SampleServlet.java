@@ -169,7 +169,8 @@ public class SampleServlet extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
         if (pathInfo.compareTo("/") == 0) {
-			loadStaticPage("index.html", request, response);
+			// loadStaticPage("index.html", request, response);
+			loadStaticPage("sample.html", request, response);
 		} else if (pathInfo.compareTo("/overview") == 0) {
 			loadStaticPage("sample.html", request, response);
 		} else if (pathInfo.startsWith("/ers/v1")) {

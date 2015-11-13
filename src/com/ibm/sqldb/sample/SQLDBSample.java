@@ -70,12 +70,12 @@ public class SQLDBSample extends HttpServlet {
 				writer.println("Key is: " + eachkey);
 				// Just in case the service name gets changed to lower case in
 				// the future, use toUpperCase
-				if (eachkey.toUpperCase().startsWith("SQLDB")) {
+				if (eachkey.toUpperCase().startsWith("SQLDB") || eachkey.toUpperCase().startsWith("DASHDB")) {
 					thekey = eachkey;
 				}
 			}
 			if (thekey == null) {
-				writer.println("Cannot find any SQLDB service in the VCAP; exiting");
+				writer.println("Cannot find any SQLDB or dashDB service in your application exiting. Please add one and try again.");
 				return false;
 			}
 			BasicDBList list = (BasicDBList) obj.get(thekey);
@@ -150,7 +150,7 @@ public class SQLDBSample extends HttpServlet {
 			// table
 			// If another version of this sample app binds to the same database,
 			// this gives us some level of isolation
-			tableName = "LOCATION";
+			tableName = "Temperature";
 
 			// Remove the table from the database
 			try {
@@ -167,7 +167,7 @@ public class SQLDBSample extends HttpServlet {
 			try {
 				// Create the CREATE TABLE SQL statement and execute it
 				sqlStatement = "CREATE TABLE " + tableName
-						+ " (CITY VARCHAR(20), NUMBERS INTEGER)";
+						+ " (CITY VARCHAR(20), TEMP INTEGER)";
 				writer.println("Executing: " + sqlStatement);
 				stmt.executeUpdate(sqlStatement);
 			} catch (SQLException e) {
@@ -178,22 +178,27 @@ public class SQLDBSample extends HttpServlet {
 			// Delete
 			try {
 				sqlStatement = "INSERT INTO " + tableName
-						+ " VALUES (\'Shanghai\', 500)";
+						+ " VALUES (\'Delhi\', 28)";
 				writer.println("Executing: " + sqlStatement);
 				stmt.executeUpdate(sqlStatement);
 
 				sqlStatement = "INSERT INTO " + tableName
-						+ " VALUES (\'Beijing\', 2000)";
+						+ " VALUES (\'Chennai\', 40)";
 				writer.println("Executing: " + sqlStatement);
 				stmt.executeUpdate(sqlStatement);
 				
 				sqlStatement = "INSERT INTO " + tableName
-						+ " VALUES (\'Tianjin\', 1000)";
+						+ " VALUES (\'Kolkata\', 35)";
 				writer.println("Executing: " + sqlStatement);
 				stmt.executeUpdate(sqlStatement);
 				
 				sqlStatement = "INSERT INTO " + tableName
-						+ " VALUES (\'Guangzhou\', 500)";
+						+ " VALUES (\'Bangalore\', 26)";
+				writer.println("Executing: " + sqlStatement);
+				stmt.executeUpdate(sqlStatement);
+				
+				sqlStatement = "INSERT INTO " + tableName
+						+ " VALUES (\'Mumbai\', 33)";
 				writer.println("Executing: " + sqlStatement);
 				stmt.executeUpdate(sqlStatement);
 
